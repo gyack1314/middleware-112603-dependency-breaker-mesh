@@ -1,0 +1,10 @@
+{"at":0,"kind":"policy","record":{"service":"format","epoch":1,"threshold":1,"recheck_after":3,"probe_limit":1}}
+{"at":0,"kind":"route","record":{"tenant":"a","primary":["format"],"fallback":[]}}
+{"at":1,"kind":"call","record":{"tenant":"a","id":"bad-input"}}
+{"at":2,"kind":"step","record":{"id":"bad-input","attempt":1,"service":"format","epoch":1,"state":"invalid"}}
+{"at":3,"kind":"call","record":{"tenant":"a","id":"old"}}
+{"at":4,"kind":"policy","record":{"service":"format","epoch":2,"threshold":1,"recheck_after":3,"probe_limit":1}}
+{"at":5,"kind":"call","record":{"tenant":"a","id":"recent"}}
+{"at":6,"kind":"step","record":{"id":"recent","attempt":1,"service":"format","epoch":2,"state":"timeout"}}
+{"at":7,"kind":"step","record":{"id":"old","attempt":1,"service":"format","epoch":1,"state":"ok"}}
+{"at":8,"kind":"inspect","record":{"service":"format"}}

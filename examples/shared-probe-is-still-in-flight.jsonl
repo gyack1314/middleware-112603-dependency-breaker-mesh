@@ -1,0 +1,11 @@
+{"at":0,"kind":"policy","record":{"service":"index","epoch":1,"threshold":1,"recheck_after":4,"probe_limit":1}}
+{"at":0,"kind":"route","record":{"tenant":"a","primary":["index"],"fallback":[]}}
+{"at":0,"kind":"route","record":{"tenant":"b","primary":["index"],"fallback":[]}}
+{"at":1,"kind":"call","record":{"tenant":"a","id":"w"}}
+{"at":2,"kind":"step","record":{"id":"w","attempt":1,"service":"index","epoch":1,"state":"timeout"}}
+{"at":6,"kind":"probe","record":{"id":"p1","service":"index","epoch":1,"tenant":"a"}}
+{"at":7,"kind":"step","record":{"id":"p1","attempt":1,"service":"index","epoch":1,"state":"accepted"}}
+{"at":8,"kind":"restart","record":{}}
+{"at":9,"kind":"probe","record":{"id":"p2","service":"index","epoch":1,"tenant":"b"}}
+{"at":10,"kind":"step","record":{"id":"p1","attempt":1,"service":"index","epoch":1,"state":"ok"}}
+{"at":11,"kind":"inspect","record":{"service":"index"}}
